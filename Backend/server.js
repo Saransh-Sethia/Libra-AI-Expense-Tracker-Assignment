@@ -7,13 +7,7 @@ const expenseRoutes = require('./routes/expenses');
 
 const app = express();
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/expenses', expenseRoutes);

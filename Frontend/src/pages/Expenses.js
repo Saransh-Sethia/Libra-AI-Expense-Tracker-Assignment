@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box, Typography, Card, Table, TableBody, TableCell,
   TableContainer, TableHead, TableRow, TablePagination,
@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import {
   Edit as EditIcon, Delete as DeleteIcon, Search as SearchIcon,
-  Add as AddIcon, FilterList as FilterIcon, ReceiptLong as EmptyIcon,
+  Add as AddIcon, ReceiptLong as EmptyIcon,
   Clear as ClearIcon,
 } from '@mui/icons-material';
 import dayjs from 'dayjs';
@@ -41,7 +41,7 @@ export default function Expenses({ onEdit }) {
       }
     }, 400);
     return () => clearTimeout(timer);
-  }, [searchInput]);
+  }, [searchInput, filters.search, setFilters]);
 
   const handleCategoryChange = (e) => {
     setFilters({ category: e.target.value });

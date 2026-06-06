@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {
   Box, Grid, Typography, Card, CardContent, CardHeader,
-  Chip, Skeleton, Alert, Button, Avatar, Divider,
+  Chip, Skeleton, Button, Avatar, Divider,
 } from '@mui/material';
 import {
   AccountBalanceWallet as WalletIcon,
@@ -9,7 +9,6 @@ import {
   Receipt as ReceiptIcon,
   TrendingUp as TrendingIcon,
   Add as AddIcon,
-  ArrowUpward as ArrowUpIcon,
 } from '@mui/icons-material';
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis,
@@ -18,7 +17,7 @@ import {
 import dayjs from 'dayjs';
 import { useExpenses } from '../context/ExpenseContext';
 import StatsCard from '../components/StatsCard';
-import { formatCurrency, CATEGORY_COLORS, CATEGORY_BG, MONTHS } from '../constants';
+import { formatCurrency, CATEGORY_COLORS, CATEGORY_BG } from '../constants';
 
 const RADIAN = Math.PI / 180;
 const renderCustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
